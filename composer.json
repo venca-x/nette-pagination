@@ -1,0 +1,21 @@
+{
+    "name": "venca-x/nette-pagination",
+    "description": "Plugin for Nette. Pagination with TB3",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "vEnCa-X",
+            "email": "venca-x@seznam.cz"
+        }
+    ],
+	"require": {
+		"php": ">= 5.3.7",
+		"nette/nette": "~2.2.0"
+	},	
+    "require-dev": {
+        "nette/tester": "@dev"
+    },
+    "autoload": {
+        "classmap": ["src/"]
+    }	
+}

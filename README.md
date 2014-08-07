@@ -32,10 +32,11 @@ HomepagePresenter.php
 public function actionMy()
 {
 	$vp = new \NettePagination( $this, 'vp' );
-	$this->paginator = $vp->getPaginator();
-	$this->paginator->itemsPerPage = 20;
-	$this->paginator->itemCount = $this->modelTweets->findAll()->count( "*" );
+	$paginator = $vp->getPaginator();
+	$paginator->itemsPerPage = 20;
+	$paginator->itemCount = $this->modelTweets->findAll()->count( "*" );
 	
+	$this->dataSelection = $this->modelTweets->findAll()->limit( $paginator->itemsPerPage, $paginator->offset );
 	//..
 }
 

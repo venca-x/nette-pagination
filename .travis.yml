@@ -11,7 +11,7 @@ matrix:
     - php: hhvm
 
 before_script:
-  - mkdir temp/cache
+  - mkdir -p temp/cache
   - composer self-update
   - composer install --no-interaction --prefer-source --dev
 

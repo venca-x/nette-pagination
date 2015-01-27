@@ -1,28 +1,33 @@
 {if $paginator->pageCount > 1}
 <div class="text-center">
     <ul class="pagination">
+
         {if $paginator->isFirst()}
-        <li class="disabled"><a href="#">« Předchozí</a></li>
+            <li class="disabled"><a href="#">« Předchozí</a></li>
         {else}
-        <li><a href="{link this, 'page' => $paginator->page - 1}">« Předchozí</a></li>
+            <li><a href="{link this, 'page' => $paginator->page - 1}" rel="prev">« Předchozí</a></li>
         {/if}
 
         {foreach $steps as $step}
-        {if $step == $paginator->page}
-        <li class="disabled"><a href="#">{$step}</a></li>
-        {else}
-        <li><a href="{link this, 'page' => $step}">{$step}</a></li>
-        {/if}
-        {if $iterator->nextValue > $step + 1}
-        <li class="disabled"><a href="#">…</a></li>
-        {/if}
+
+            {if $step == $paginator->page}
+                <li class="disabled"><a href="#">{$step}</a></li>
+            {else}
+                <li><a href="{link this, 'page' => $step}" {if $step < $paginator->page}rel="prev"{else}rel="next"{/if}>{$step}</a></li>
+            {/if}
+
+            {if $iterator->nextValue > $step + 1}
+                <li class="disabled"><a href="#">…</a></li>
+            {/if}
+
         {/foreach}
 
         {if $paginator->isLast()}
-        <li class="disabled"><a href="#">Další »</a></li>
+            <li class="disabled"><a href="#">Další »</a></li>
         {else}
-        <li><a href="{link this, 'page' => $paginator->page + 1}">Další »</a></li>
+            <li><a href="{link this, 'page' => $paginator->page + 1}" rel="next">Další »</a></li>
         {/if}
+
     </ul>
 </div>
 {/if}

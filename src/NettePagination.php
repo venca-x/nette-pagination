@@ -12,6 +12,8 @@ class NettePagination extends Control
     /** @persistent */
     public $page = 1;
 
+    private $count = 10;
+
     public function getPaginator()
     {
         if ( !$this->paginator )
@@ -19,6 +21,15 @@ class NettePagination extends Control
             $this->paginator = new Paginator;
         }
         return $this->paginator;
+    }
+
+    /**
+     * Set count
+     * @param $count
+     */
+    public function setCount( $count )
+    {
+        $this->count = $count;
     }
 
     public function render()
@@ -32,9 +43,8 @@ class NettePagination extends Control
         else
         {
             $arr = range( max( $paginator->firstPage, $page - 3 ), min( $paginator->lastPage, $page + 3 ) );
-            $count = 10;
-            $quotient = ($paginator->pageCount - 1) / $count;
-            for ( $i = 0; $i <= $count; $i++ )
+            $quotient = ($paginator->pageCount - 1) / $this->count;
+            for ( $i = 0; $i <= $this->count; $i++ )
             {
                 $arr[] = round( $quotient * $i ) + $paginator->firstPage;
             }

@@ -2,15 +2,15 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-if (!class_exists('Tester\Assert')) {
-	echo "Install Nette Tester using `composer update --dev`\n";
-	exit(1);
-}
+(new \Nette\Loaders\RobotLoader())
+	->setCacheStorage(new \Nette\Caching\Storages\FileStorage(__DIR__ . '/temp'))
+	->addDirectory([__DIR__ . '/../src'])
+	->register();
 
-Tester\Environment::setup();
+Testbench\Bootstrap::setup(__DIR__ . '/temp', function (\Nette\Configurator $configurator) {
+	$configurator->addParameters([
+		'appDir' => __DIR__ . '/../src',
+	]);
 
-$configurator = new Nette\Configurator;
-$configurator->setDebugMode(FALSE);
-$configurator->setTempDirectory(__DIR__ . '/../temp');
-
-return $configurator->createContainer();
+	//$configurator->addConfig(__DIR__ . '/../app/config/config.neon');
+});

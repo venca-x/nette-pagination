@@ -1,47 +1,32 @@
 <?php
 
-namespace Test;
+namespace Tests;
 
-use Nette,
-	Tester,
-	Tester\Assert;
+use App;
+use Nette;
+use Tester;
 
-$container = require __DIR__ . '/bootstrap.php';
+require __DIR__ . '/bootstrap.php';
 
-
-class ExampleTest extends Tester\TestCase
+/**
+ * @testCase
+ */
+class PaginationTest extends Tester\TestCase
 {
-	private $container;
 
+	use \Testbench\TComponent;
 
-	function __construct(Nette\DI\Container $container)
+	public function testRender()
 	{
-		$this->container = $container;
+		$vp = new \NettePagination();
+		$vp->setCount( 5 );
+		$paginator = $vp->getPaginator();
+		$paginator->itemsPerPage = 20;
+		$paginator->itemCount = 100;
+
+		$this->checkRenderOutput($vp, __DIR__ . '/expected/base-paginator.phtml');
 	}
 
-
-	function setUp()
-	{
-	}
-
-
-	function testDummy()
-	{
-		Assert::true( true );
-	}
-/*
-	function testPagination()
-	{
-		$vp = new \NettePagination( $this->container, 'vp' );
-		//$paginator = $vp->getPaginator();
-		//$paginator->itemsPerPage = 20;
-		//$paginator->itemCount = $this->modelTweets->findAll()->count( "*" );
-
-		//$this->dataSelection = $this->modelTweets->findAll()->limit( $paginator->itemsPerPage, $paginator->offset );	
-	}
-*/
 }
 
-
-$test = new ExampleTest($container);
-$test->run();
+(new PaginationTest)->run();

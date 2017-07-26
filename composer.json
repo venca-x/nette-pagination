@@ -10,7 +10,9 @@
   ],
   "require": {
     "php": ">= 5.3.7",
-    "nette/nette": ">=2.2.0"
+    "nette/application": ">=2.2.0",
+    "nette/utils": ">=2.2.0",
+    "nette/robot-loader": ">=2.2.0"
   },
   "require-dev": {
     "nette/tester": "2.0.x-dev as v1.7",

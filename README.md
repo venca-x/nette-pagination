@@ -15,23 +15,23 @@ Installation
 
 install with composer:
 ```js
-	composer require venca-x/nette-pagination
+composer require venca-x/nette-pagination
 ```
 
 or add line to composer.json:
 ```js
 // composer.json
 {
-	// ...
-	"require": {
-		// ...
-		"venca-x/nette-pagination": "@dev",
-	}
+    // ...
+    "require": {
+        // ...
+        "venca-x/nette-pagination": "@dev",
+    }
 }
 ```
 2. Use Composer to download and install the bundle:
 ```js
-        composer update
+composer update
 ```
 Configuration
 -------------
@@ -39,7 +39,6 @@ Configuration
 HomepagePresenter.php
 
 ```php
-
 /** @var int shoved page in paginator */
 private $paginatorOffset;
 
@@ -68,15 +67,15 @@ Usage
 -------------
 On all pages of paginator (without first) use meta robots noindex,follow
 ```html
-    {block head}
-        {if $paginatorOffset > 1}
-            <meta name="robots" content="noindex,follow">
-        {/if}
-    {/block}
+{block head}
+    {if $paginatorOffset > 1}
+        <meta name="robots" content="noindex,follow">
+    {/if}
+{/block}
 
-    {block content}
-        ...
-        {control vp}
-        ...
-    {/block}
+{block content}
+    ...
+    {control vp}
+    ...
+{/block}
 ```

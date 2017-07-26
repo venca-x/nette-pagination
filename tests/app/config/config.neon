@@ -1,0 +1,6 @@
+application:
+	mapping:
+		*: VencaX\Components\NettePaginator\Tests\App\*Presenter
+
+services:
+    routing.router: VencaX\Components\NettePaginator\Tests\App\Router::createRouter

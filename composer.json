@@ -8,16 +8,18 @@
       "email": "venca-x@seznam.cz"
     }
   ],
-  "require": {
-    "php": ">= 5.3.7",
-    "nette/application": ">=2.2.0",
-    "nette/utils": ">=2.2.0",
-    "nette/robot-loader": ">=2.2.0"
-  },
-  "require-dev": {
-    "nette/tester": "2.0.x-dev as v1.7",
-    "mrtnzlml/testbench": "^2.3"
-  },
+	"require": {
+		"php": ">= 5.3.7",
+		"nette/utils": ">=2.2.0",
+		"nette/application": ">=2.2.0",
+		"latte/latte": ">=2.2.0"
+	},
+	"require-dev": {
+		"nette/robot-loader": ">=2.2.0",
+		"nette/bootstrap": ">=2.2.0",
+		"tracy/tracy": ">=2.2.0",
+		"nette/tester": "2.0.x-dev as v1.7"
+	},
   "autoload": {
     "classmap": [
       "src/"

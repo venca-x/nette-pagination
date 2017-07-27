@@ -1,7 +1,5 @@
 <?php
 
-namespace VencaX\Components;
-
 use Nette\Application\UI\Control;
 use Nette\Utils\Paginator;
 

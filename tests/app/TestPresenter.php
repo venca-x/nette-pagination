@@ -12,7 +12,7 @@ final class TestPresenter extends Nette\Application\UI\Presenter
 
     protected function createComponentVp()
     {
-        $vp = new VencaX\Components\NettePagination();
+        $vp = new \NettePagination();
         $vp->setCount(5);
         $paginator = $vp->getPaginator();
         $paginator->itemsPerPage = 20;

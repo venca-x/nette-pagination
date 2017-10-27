@@ -1,0 +1,33 @@
+{
+  "name": "nette-pagination",
+  "version": "1.0.0",
+  "description": "Nette paginator with Twitter bootsrap template",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/venca-x/nette-pagination.git"
+  },
+  "keywords": [
+    "Nette",
+    "Boostrap",
+    "paginator"
+  ],
+  "author": "vEnCa-X",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/venca-x/nette-pagination/issues"
+  },
+  "homepage": "https://github.com/venca-x/nette-pagination#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-shell": "^2.1.0",
+    "load-grunt-tasks": "^3.5.2"
+  }
+}

@@ -1,0 +1,34 @@
+{if $paginator->pageCount > 1}
+    <div class="text-center">
+        <ul class="pagination">
+
+            {if $paginator->isFirst()}
+                <li class="page-item disabled"><span class="page-link">{$previousLabel}</span></li>
+            {else}
+                <li class="page-item"><a href="{link this, 'page' => $paginator->page - 1}" class="page-link" rel="prev">{$previousLabel}</a></li>
+            {/if}
+
+            {foreach $steps as $step}
+
+                {if $step == $paginator->page}
+                    <li class="page-item active"><span class="page-link">{$step}</span></li>
+                {else}
+                    <li class="page-item"><a href="{link this, 'page' => $step}" class="page-link" {if $step < $paginator->page}rel="prev"
+                           {else}rel="next"{/if}>{$step}</a></li>
+                {/if}
+
+                {if $iterator->nextValue > $step + 1}
+                    <li class="page-item disabled"><span class="page-link">…</span></li>
+                {/if}
+
+            {/foreach}
+
+            {if $paginator->isLast()}
+                <li class="page-item disabled"><span class="page-link">{$nextLabel}</span></li>
+            {else}
+                <li class="page-item"><a href="{link this, 'page' => $paginator->page + 1}" class="page-link" rel="next">{$nextLabel}</a></li>
+            {/if}
+
+        </ul>
+    </div>
+{/if}

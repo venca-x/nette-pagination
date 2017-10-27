@@ -3,11 +3,10 @@
         <ul class="pagination">
 
             {if $paginator->isFirst()}
-                <li class="disabled"><a href="#">« Předchozí</a></li>
+                <li class="disabled"><a href="#">{$previousLabel}</a></li>
             {else}
-                <li><a href="{link this, 'page' => $paginator->page - 1}" rel="prev">« Předchozí</a></li>
+                <li><a href="{link this, 'page' => $paginator->page - 1}" rel="prev">{$previousLabel}</a></li>
             {/if}
-
             {foreach $steps as $step}
 
                 {if $step == $paginator->page}
@@ -24,9 +23,9 @@
             {/foreach}
 
             {if $paginator->isLast()}
-                <li class="disabled"><a href="#">Další »</a></li>
+                <li class="disabled"><a href="#">{$nextLabel}</a></li>
             {else}
-                <li><a href="{link this, 'page' => $paginator->page + 1}" rel="next">Další »</a></li>
+                <li><a href="{link this, 'page' => $paginator->page + 1}" rel="next">{$nextLabel}</a></li>
             {/if}
 
         </ul>

@@ -3,4 +3,4 @@ application:
 		*: VencaX\Components\NettePaginator\Tests\App\*Presenter
 
 services:
-    routing.router: VencaX\Components\NettePaginator\Tests\App\Router::createRouter
+	routing.router: VencaX\Components\NettePaginator\Tests\App\Router::createRouter

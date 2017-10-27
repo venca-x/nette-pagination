@@ -1,6 +1,6 @@
 {
   "name": "venca-x/nette-pagination",
-  "description": "Plugin for Nette. Pagination with TB3",
+  "description": "Plugin for Nette. Twitter Bootsrap pagination",
   "license": "MIT",
   "authors": [
     {
@@ -8,21 +8,22 @@
       "email": "venca-x@seznam.cz"
     }
   ],
-	"require": {
-		"php": ">= 5.3.7",
-		"nette/utils": ">=2.2.0",
-		"nette/application": ">=2.2.0",
-		"latte/latte": ">=2.2.0"
-	},
-	"require-dev": {
-		"nette/robot-loader": ">=2.2.0",
-		"nette/bootstrap": ">=2.2.0",
-		"tracy/tracy": ">=2.2.0",
-		"nette/tester": "2.0.x-dev as v1.7"
-	},
+  "require": {
+    "php": ">=7.1",
+    "nette/utils": "^3.0",
+    "nette/application": "^3.0",
+    "latte/latte": "^3.0"
+  },
+  "require-dev": {
+    "nette/robot-loader": "^3.0",
+    "nette/bootstrap": "^3.0",
+    "tracy/tracy": "^2.4",
+    "nette/tester": "^2.0"
+  },
   "autoload": {
     "classmap": [
       "src/"
     ]
-  }
+  },
+  "minimum-stability": "dev"
 }

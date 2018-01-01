@@ -10,6 +10,11 @@ Nette pagination Twitter Bootrstrap
 Plugin for Nette. Pagination with Twitter Bootstrap style Twitter Bootstrap
 Suports Twitter Bootstrap 3 and Twitter Bootstrap 4
 
+| Version     | Twitter&nbsp;Bootstrap&nbsp;version | PHP&nbsp;&nbsp;&nbsp;     | Recommended&nbsp;Nette |
+| ---         | ---                                 | ---                       | ---               |
+| dev-master  | 4, 3                                | \>= 7.1                   | Nette 3.0         |
+| 0.1.x       | 3                                   | \>= 5.5                   | Nette 2.4, 2.3    |
+
 Installation
 ------------
 install with composer:

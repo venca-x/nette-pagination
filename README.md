@@ -46,7 +46,8 @@ private $paginatorOffset;
 
 public function actionMy()
 {
-    $vp = new VencaX\NettePagination\BootstrapRendererV4();
+    //$vp = new VencaX\NettePagination\BootstrapRendererV4();
+    $vp = new VencaX\NettePagination\BootstrapRendererV4($this, 'vp');
     $vp->setMaximalPagesCount( 5 );//maximal count pages in paginator
     $paginator = $vp->getPaginator();
     $paginator->itemsPerPage = 20;

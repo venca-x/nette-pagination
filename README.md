@@ -29,7 +29,7 @@ composer require venca-x/nette-pagination:^1.0
 //or
 composer require venca-x/nette-pagination:dev-master
 ```
-For Nette 2.4. nad 2.3 use:
+For Nette 2.4. and 2.3 use:
 ```
 composer require venca-x/nette-pagination:^0.1
 ```
